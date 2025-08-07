@@ -16,7 +16,7 @@ jobs:
 
       - name: Set up Docker Scout CLI
         run: |
-          curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s -- -b ./bin v1.19.1
+          curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s -- -b ./bin v1.18.3
 
       - name: Run Docker Scout file scan
         run: |
