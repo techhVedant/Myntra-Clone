@@ -19,9 +19,13 @@ jobs:
           curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s -- -b ./bin latest
 
       - name: Run Docker Scout file scan
-        run: |
-            docker-scout version
-            docker-scout quickview . --format sarif --exit-code 0 | tee scout-results.sarif || echo "Scout failed but continuing"
+        uses: docker/scout-action@v1
+        with:
+          command: quickview
+          context: .
+          output: sarif
+          sarif-file: scout-results.sarif
+          exit-code: 0
 
       - name: Upload Scout scan results
         uses: actions/upload-artifact@v4
