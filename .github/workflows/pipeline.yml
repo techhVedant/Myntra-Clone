@@ -20,7 +20,7 @@ jobs:
 
       - name: Run Docker Scout file scan
         run: |
-          docker scout quickview . --format sarif > scout-results.sarif
+          docker-scout quickview . --format sarif > scout-results.sarif
 
       - name: Upload Scout scan results
         uses: actions/upload-artifact@v4
