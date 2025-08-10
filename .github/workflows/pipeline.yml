@@ -27,7 +27,7 @@ jobs:
         uses: docker/scout-action@v1
         with:
           command: quickview
-          context: .
+          file: .
           sarif-file: scout-results.sarif
           exit-code: 0 
 
