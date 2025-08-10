@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install dependecies
-        run: npm install
+        run: sh npm install
 
     #  - name: Set up Docker Scout CLI
      #   run: |
