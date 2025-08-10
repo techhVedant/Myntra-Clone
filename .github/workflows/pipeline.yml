@@ -29,6 +29,9 @@ jobs:
           command: quickview
           file: .
           sarif-file: scout-results.sarif
-          exit-code: 0 
+          exit-code: 0
+          summary: true
+          format: json
+          write-comment: true 
 
       
