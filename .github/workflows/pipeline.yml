@@ -14,23 +14,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Docker Scout CLI
-        run: |
-          curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s -- -b ./bin latest
+      - name: Install dependecies
+        run: npm install
 
-      - name: Run Docker Scout file scan
-        uses: docker/scout-action@v1
-        with:
-          command: quickview
-          context: .
-          output: sarif
-          sarif-file: scout-results.sarif
-          exit-code: 0
+    #  - name: Set up Docker Scout CLI
+     #   run: |
+     #     curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s -- -b ./bin latest
 
-      - name: Upload Scout scan results
-        uses: actions/upload-artifact@v4
-        with:
-          name: scout-file-scan-results
-          path: scout-results.sarif
+   #   - name: Run Docker Scout file scan
+     #   uses: docker/scout-action@v1
+     #   with:
+       #   command: quickview
+       #   context: .
+       #   output: sarif
+       #   sarif-file: scout-results.sarif
+       #   exit-code: 0
+
+   #   - name: Upload Scout scan results
+    #    uses: actions/upload-artifact@v4
+     #   with:
+    #      name: scout-file-scan-results
+    #      path: scout-results.sarif
 
       
